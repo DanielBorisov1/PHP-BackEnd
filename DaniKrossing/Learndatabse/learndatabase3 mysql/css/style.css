@@ -1,0 +1,24 @@
+body {
+    background-color: rgba(128, 128, 128, 0.625) !important;
+}
+
+input {
+    border-radius: 10px;
+    border: none;
+    width: 20%;
+    
+}
+
+.btn-brand  {
+    background-color:rgba(0, 0, 0, 0.585) !important;
+    color: white !important;
+    
+}
+
+
+.box1 {
+    justify-content: center !important;
+    text-align: center !important;
+   
+}
+

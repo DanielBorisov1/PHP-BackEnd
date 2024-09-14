@@ -1,0 +1,25 @@
+.section-padding {
+    padding-top: 150px !important;
+    padding-bottom: 50px !important;
+}
+
+body {
+    background-color: rgba(170, 169, 169, 0.625) !important;
+}
+.custom-card {
+    transition: all 0.4s ease;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 10px;
+    padding-bottom: 0px;
+    padding: 10% 10% 10% 10% !important;
+ 
+}
+
+.shadow-on-hover {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.btn-brand {
+    width: 15%;
+}
