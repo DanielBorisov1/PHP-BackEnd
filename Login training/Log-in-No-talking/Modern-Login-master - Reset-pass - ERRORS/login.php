@@ -28,7 +28,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 	//ERRORS
 	if (empty($uname . $pass)) {
 		//Fill in blank
-		header("Location: index.php?error=Попълнете празнотите полета");
+		header("Location: index.php?error=Попълнете празните полета");
 		exit();
 	}
 
