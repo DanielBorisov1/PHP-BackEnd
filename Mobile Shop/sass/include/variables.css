@@ -1,0 +1,22 @@
+
+:root {
+    --font-baloo:"Ballo Thambi 2", cursive;
+    --font-releway: "Raleway" cursive;
+    --font-rubik:"Rubik", cursove;
+    --color-primary:#003859;
+    --color-second: #00A5C4;
+    --color-yellow:#FFD289;
+}
+
+.color-primary-bg {
+    background: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.color-yellow-bg{
+    background: var(--color-yellow);
+}
+
+.color-second-bg{
+   background: var(--color-second);
+}
