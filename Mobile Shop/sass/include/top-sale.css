@@ -26,10 +26,26 @@
 
     .owl-carousel .owl-nav button.owl-prev span,
     .owl-carousel .owl-nav button.owl-next span{
-        font-size: 35px;
+        font-size: 45px;
         color: var(--color-primary);
         padding: 0 1rem;
     }
+
+    @media (max-width: 768px){
+        .owl-carousel .owl-nav button{
+            position: relative;
+            top: 20%;
+            outline: none;
+        }
+
+        .grid .grid-item {
+            justify-content: center !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
+    }
+
+   
 
     .owl-carousel .owl-nav button.owl-prev span{
         margin-left: -4rem;

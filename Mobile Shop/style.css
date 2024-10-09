@@ -3,18 +3,15 @@
 /**typography classes*/
 
 .padding-bottom{
-    padding-bottom: 50px !important;
+    padding-bottom: 70px !important;
 }
 
+
+.form span{
+    text-decoration: none !important;
+}
 
 #filters {
     text-align: end !important;
-   
-}
-
-.grid{
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
 }
 
