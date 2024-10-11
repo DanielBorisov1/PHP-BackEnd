@@ -1,0 +1,29 @@
+/**typography classes*/
+
+.font-ballo{
+    font-family: var(--font-baloo);
+}
+
+.font-rale {
+    font-family: var(--font-releway);
+}
+
+.font-rubik{
+    font-family:var(--font-rubik);
+}
+
+.font-size-12{
+    font-size: 12px;
+}
+
+.font-size-14{
+    font-size: 14px;
+}
+
+.font-size-16{
+    font-size: 16px;
+}
+
+.font-size-20{
+    font-size: 20px;
+}
