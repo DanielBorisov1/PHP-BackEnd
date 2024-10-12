@@ -27,6 +27,11 @@
     <link rel="stylesheet" href="./HTML Themplate/sass/stylethemplate.css">
     <link rel="stylesheet" href="./HTML Themplate/sass/include/top-sale.css">
 
+    <?php
+    //require MySql conn
+    require('functions.php');
+    ?>
+
     <title>Mobile Shopee
     </title>
 </head>

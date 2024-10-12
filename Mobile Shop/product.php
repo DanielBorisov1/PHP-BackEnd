@@ -22,8 +22,6 @@ include('./Template/_top-sale.php');
 
 
 
-
-
 <?php
 include('./includes/footer.php');
 ?>
