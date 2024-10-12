@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="price py-2">
-                            <span>$152</span>
+                            <span>$122</span>
                         </div>
                         <button type="submit" class="btn btn-warning font-size-12 ">Add to Cart</button>
                     </div>
@@ -113,7 +113,7 @@
                         </div>
 
                         <div class="price py-2">
-                            <span>$152</span>
+                            <span>$122</span>
                         </div>
                         <button type="submit" class="btn btn-warning font-size-12 ">Add to Cart</button>
                     </div>

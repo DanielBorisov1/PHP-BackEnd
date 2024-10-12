@@ -14,11 +14,11 @@ class DBController
     function __construct()
     {
 
-        $con = mysqli_connect($this->sname, $this->unmae, $this->password, $this->db_name);
+       $this->con = mysqli_connect($this->sname, $this->unmae, $this->password, $this->db_name);
 
-        if (!$con) {
-            echo "Connection failed!";
-        }
+       if ($this->con->connect_error){
+        echo "Fail " . $this->con->connect_error;
+    }
     }
 
 
@@ -27,7 +27,7 @@ class DBController
     {
         if ($this->con != null) {
             $this->con->close();
-            $this->con - null;
+            $this->con = null;
         }
     }
 
