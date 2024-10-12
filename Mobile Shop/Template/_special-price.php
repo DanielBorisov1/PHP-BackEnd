@@ -1,15 +1,12 @@
 <?php
 
-$brand = array_map(function ($pro) {
+$brand = array_map(function ($pro) {return $pro['item_brand'];}, $product_shuffle);
 
-    return $pro['item_brand'];
+$unique = array_unique($brand);//Buttons sort
 
-    }, $product_shuffle);
+sort($unique);//Buttons sort
 
-
-
-$unique = array_unique($brand);
-sort($unique);
+shuffle($product_shuffle);
 
 
 ?>
@@ -22,16 +19,13 @@ sort($unique);
         <h4 class="font-rubik font-size-20">Special Price</h4>
         <div id="filters" class="button-group text-right font-baloo font-size-16 pb-4">
             <button class="btn is-checked" data-filter="*">All Brand</button>
-            <?php 
-
-              array_map(function($brand) {
+            <!--Buttons Apple,Redmi,Samsung-->
+            <?php
+            array_map(function ($brand) {
                 printf('<button class="btn" data-filter=".%s">%s</button>', $brand, $brand);
-              }, $unique);
-
+            }, $unique);
             ?>
-           
-            <button class="btn" data-filter=".Samsung">Samsung</button>
-            <button class="btn" data-filter=".Redmi">Redmi</button>
+
         </div>
 
         <div class="row ">
