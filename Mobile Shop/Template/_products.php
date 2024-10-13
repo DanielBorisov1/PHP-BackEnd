@@ -14,13 +14,13 @@
 
                      <div class="col-sm-6">
 
-                         <img src="./assets/products/1.png" alt="product" class="img-fluid">
+                         <img src="<?php echo $item['item_image'] ?? "./assets/products/1.png"; ?>" alt="product" class="img-fluid">
                      </div>
 
 
                      <div class="col-sm-6 py-5">
-                         <h5 class="font-baloo font-size-20">Samsung Galaxy 10</h5>
-                         <small>by Samsung</small>
+                         <h5 class="font-baloo font-size-20"><?php echo $item['item_name'] ?? "Samsung Galaxy 10"; ?></h5>
+                         <small>by <?php echo $item['item_brand'] ?? "Brand"; ?></small>
                          <div class="d-flex">
                              <div class="rating text-warning font-size-12">
                                  <span><i class="fas fa-star"></i></span>
@@ -29,7 +29,7 @@
                                  <span><i class="fas fa-star"></i></span>
                                  <span><i class="far fa-star"></i></span>
                              </div>
-                             <a href="#" class="px-2 pb-2 font-rale font-size-14">20,534 ratings | 1000+ answered
+                             <a href="#" class="px-2 pb-2 font-rale font-size-14 text-decoration-none">20,534 ratings | 1000+ answered
                                  questions</a>
                          </div>
                          <hr class="m-0">
@@ -39,10 +39,10 @@
                              <tr class="font-rale font-size-14">
                                  <td>M.R.P:</td>
                                  <td><strike>$162.00</strike></td>
-                             </tr>
+                             </tr>  
                              <tr class="font-rale font-size-14">
                                  <td>Deal Price:</td>
-                                 <td class="font-size-20 text-danger">$<span>152.00</span><small
+                                 <td class="font-size-20 text-danger">$<span> <?php echo $item['item_price'] ?? 0; ?> </span><small
                                          class="text-dark font-size-12">&nbsp;&nbsp;Inclusive of all taxes</small></td>
                              </tr>
                              <tr class="font-rale font-size-14">

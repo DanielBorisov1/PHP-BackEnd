@@ -1,10 +1,12 @@
 <?php
 
-$brand = array_map(function ($pro) {return $pro['item_brand'];}, $product_shuffle);
+$brand = array_map(function ($pro) {
+    return $pro['item_brand'];
+}, $product_shuffle);
 
-$unique = array_unique($brand);//Buttons sort
+$unique = array_unique($brand); //Buttons sort
 
-sort($unique);//Buttons sort
+sort($unique); //Buttons sort
 
 shuffle($product_shuffle);
 
@@ -32,12 +34,13 @@ shuffle($product_shuffle);
 
             <div class="grid">
 
-                <?php array_map(function ($item) { ?>
+              <?php array_map(function ($item) { ?>
 
                     <div class="grid-item border  <?php echo $item['item_brand'] ?? "Brand"; ?>">
                         <div class="item py-2" style="width: 200px;">
                             <div class="product font-rale">
-                                <a href="#"><img src="<?php echo $item['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1"
+                                <!--//  printf('%s?item_id=%s', 'product.php', $item['item_id'])---PRODUCT PAGE-->
+                                <a href="<?php printf('%s?item_id=%s', 'product.php', $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1"
                                         class="img-fluid"></a>
                                 <div class="text-center">
                                     <h6> <?php echo $item['item_name'] ?? "Unknown"; ?> </h6>
