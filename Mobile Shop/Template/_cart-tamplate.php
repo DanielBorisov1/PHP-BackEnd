@@ -12,6 +12,7 @@
                     //като елемент сега този футаж казва върнете всички данни в таблицата с карти върнете всички данни в таблицата с карти и ще получите тези данн един по един
                     foreach ($product->getData('cart') as $item):
                         $cart = $product->getProduct($item['item_id']);
+                      //  print_r($cart);
                         array_map(function ($item) {
                     ?>
 
@@ -19,13 +20,13 @@
                             <div class="row border-top py-3 mt-3">
 
                                 <div class="col-sm-2">
-                                    <img src="./assets/products/1.png" style="height:120px;" class="img-fluid" alt="cart1">
+                                    <img src="<?php echo $item['item_image'] ?? "./assets/product/1.png" ?>" style="height:120px;" class="img-fluid" alt="cart1">
                                 </div>
 
                                 <div class="col-sm-8">
 
-                                    <h5 class="font-ballo font-size-20">Samsung Galaxy 10</h5>
-                                    <small>by Samsung</small>
+                                    <h5 class="font-ballo font-size-20"><?php echo $item['item_name'] ?? "Unknown"; ?></h5>
+                                    <small>by <?php echo $item['item_brand'] ?? "Brand"; ?></small>
 
 
                                     <!--product rating-->
@@ -58,7 +59,7 @@
 
                                 <div class="col-sm-2 text-right">
                                     <div class="font-size-20 text-danger font-ballo">
-                                        $<span class="product_price">152</span>
+                                        $<span class="product_price"><?php echo $item['item_price'] ?? 0; ?></span>
                                     </div>
                                 </div>
 
