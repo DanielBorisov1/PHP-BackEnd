@@ -25,3 +25,8 @@ button, button:focus{
 #filters {
     text-align: end !important;
 }
+
+span.cart-numbers{
+    background-color: white !important;
+    color: black !important;
+}

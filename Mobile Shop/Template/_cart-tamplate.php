@@ -12,7 +12,7 @@
                     //като елемент сега този футаж казва върнете всички данни в таблицата с карти върнете всички данни в таблицата с карти и ще получите тези данн един по един
                     foreach ($product->getData('cart') as $item):
                         $cart = $product->getProduct($item['item_id']);
-                      //  print_r($cart);
+                        //  print_r($cart);
                         array_map(function ($item) {
                     ?>
 
@@ -67,7 +67,7 @@
                             <!--!cart item 1-->
 
                     <?php
-                        }, $cart);//closing array_map function
+                        }, $cart); //closing array_map function
                     endforeach;
                     ?>
 
@@ -80,7 +80,8 @@
                         <h6 class="font-size-12 font-rale text-success py-3"><i class="fas fa-check me-2"></i>Your
                             order is eligible for FREE Delivery.</h6>
                         <div class="border-top py-4">
-                            <h5 class="font-ballo font-size-20">Subtotal ( 2 item ):&nbsp; <span
+                            <!--Number of rows in a cart "echo count($product->getData('cart'));"-->
+                            <h5 class="font-ballo font-size-20">Subtotal ( <?php echo count($product->getData('cart')); ?> item ):&nbsp; <span
                                     class="text-danger">$<span class="text-danger" id="deal-price">152.00</span>
                             </h5>
                             <button type="submit" class="btn btn-warning mt-3">Proceed to Buy</button>
