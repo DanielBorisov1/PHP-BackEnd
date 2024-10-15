@@ -30,34 +30,3 @@ span.cart-numbers{
     background-color: white !important;
     color: black !important;
 }
-
-
-
-
-@media (max-width:900px) {
-    .qty {
-        display: inline-flex !important; 
-    }
-}
-
-
-@media (max-width: 574px){
-    .Centrirane {
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
-    .product-rating {
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
-    
-
-   .qty .gangsta-button{
-       
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
-}
