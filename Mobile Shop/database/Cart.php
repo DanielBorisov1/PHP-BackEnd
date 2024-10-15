@@ -62,16 +62,13 @@ class Cart
     }
 
 
-    //delete cart item using cart item id
-    public function deleteCart($item_id = null, $table = 'cart'){
+     // delete cart item using cart item id
+     public function deleteCart($item_id = null, $table = 'cart'){
         if($item_id != null){
-
             $result = $this->db->con->query("DELETE FROM {$table} WHERE item_id={$item_id}");
-
-            if($result) {
+            if($result){
                 header("Location:" . $_SERVER['PHP_SELF']);
             }
-
             return $result;
         }
     }
