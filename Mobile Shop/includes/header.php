@@ -46,11 +46,9 @@
 
 
             <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
-                <p class="font-rale font-size-14 text-black-50 m-0">Daniel Stoikov 430-985 Eleifend St. Duluth
-                    Washington
-                    92611 (427) 930-52551221</p>
+                <a href="#" class="px-3 border-right border-end text-dark text-decoration-none">Login</a>
                 <div class="font-rale font-size-14">
-                    <a href="#" class="px-3 border-right border-end text-dark text-decoration-none">Login</a>
+
                     <a href="#" class="px-3 border-right  text-dark text-decoration-none">Whislist</a>
                 </div>
             </div>
