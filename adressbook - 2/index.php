@@ -23,12 +23,9 @@ $groups = array(1 => 'Храни', 2 => 'Транспорт', 3 => 'Забавл
 
     <div class="d-flex pt-4 justify-content-center text-center aling-items-center">
         <select name="group "> <!--1-->
-
             <option value="0">Всички</option>
 
             <?php
-
-          
             //Приятели; Бивши; Бъдещи; Колеги 
             foreach ($groups as $key => $value) {
                 echo '<option value=" ' . $key . ' ">'  . $value . '</option>';
@@ -46,7 +43,6 @@ $groups = array(1 => 'Храни', 2 => 'Транспорт', 3 => 'Забавл
 
 
 <div class=" pt-5 justify-content-center text-center aling-items-center d-flex">
-
     <table class="border">
         <tr>
             <td class="border">Име</td>
@@ -60,22 +56,29 @@ $groups = array(1 => 'Храни', 2 => 'Транспорт', 3 => 'Забавл
         if (file_exists('data.txt')) {
             //чете файла
             $result = file('data.txt');
-            $totslSum= 0;
+            $totslSum = 0;
+
             //всяка една информация ще бъде един нов ред на таблицата
             foreach ($result as $value) {
+                $columns = explode('!', $value);
 
-                //Разбиване на файловете по редовете на таблицата
-                $columns = explode('!', $value); //value държи цялата информация
 
-                //когато get параметъра не е равен на текущия ред пишем continue
-                if ($_GET['group'] >0 && (int)$_GET['$group'] != (int) $columns[2]) {
+                if ((int)$_GET['group'] != (int) $columns[2]) {
                     continue;
                 }
 
-                $totslSum += $columns[1];
+
+                //Разбиване на файловете по редовете на таблицата
+                //value държи цялата информация
+                //когато get параметъра не е равен на текущия ред пишем continue
+
+
+
 
                 //Гледаме масива echo'<pre>'.print_r( $columns, true ).'</pre';
 
+
+                $totslSum += $columns[1];
                 // информацията в таблицата
                 echo '<tr>
                 <td class="border">' . $columns[0] . '</td>
@@ -92,13 +95,11 @@ $groups = array(1 => 'Храни', 2 => 'Транспорт', 3 => 'Забавл
             echo '<tr>  
             <td class="border"></td>
        
-            
             <td class="border">' . number_format($totslSum, 2, '.', '') . '</td> 
     
             <td class="border"></td>
 
-            </tr>
-            ';
+            </tr>';
         }
         ?>
 
