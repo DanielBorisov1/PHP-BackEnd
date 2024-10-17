@@ -39,7 +39,7 @@
                              <tr class="font-rale font-size-14">
                                  <td>M.R.P:</td>
                                  <td><strike>$162.00</strike></td>
-                             </tr>  
+                             </tr>
                              <tr class="font-rale font-size-14">
                                  <td>Deal Price:</td>
                                  <td class="font-size-20 text-danger">$<span> <?php echo $item['item_price'] ?? 0; ?> </span><small
@@ -157,7 +157,19 @@
                              </div>
 
                              <div class="col">
-                                 <button type="submit" class="btn btn-warning gx-3  form-control">Add to Cart</button>
+
+                                 <form method="post">
+                                     <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
+                                     <input type="hidden" name="user_id" value="<?php echo 1; ?>">
+
+                                     <?php
+                                        if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])) {
+                                            echo '<button type="submit" disabled class="Butonche btn btn-success font-size-16">In the Cart</button>';
+                                        } else {
+                                            echo '<button type="submit" name="top_sale_submit" class="Butonche btn btn-warning  font-size-16"; >Add to Cart</button>';
+                                        }
+                                        ?>
+                                 </form>
                              </div>
                          </div>
                          <!--!Buttons-->
