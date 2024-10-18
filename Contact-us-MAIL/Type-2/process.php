@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Вземане на данните от формата
+    
     $fname = htmlspecialchars(trim($_POST['FName']));
     $lname = htmlspecialchars(trim($_POST['LName']));
     $email = filter_var(trim($_POST['Email']), FILTER_SANITIZE_EMAIL);
@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    $errors = []; // Масив за грешки
+    $errors = []; 
 
     $everything = $fname || $lname || $email || $message;
 
@@ -45,15 +45,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Съобщението трябва да съдържа поне 10 символа.";
     }
 
-    /* Ако има грешки, те се показват
+    /* Ако има грешки те се показват
     if (!empty($errors)) {
         foreach ($errors as $error) {
             echo "<p style='color: red;'>$error</p>";
         }*/
 
       else {
-        // Ако няма грешки, се изпраща имейл
-        $to = "your-email@example.com";
+        
+        $to = "danielborisov305@gmail.com";
         $subject = "Ново съобщение от $fname . $lname";
         $email_content = "Име: $name\n";
         $email_content .= "Имейл: $email\n\n";
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mail($to, $subject, $email_content, $headers)) {
             echo "<p style='color: green;'>Съобщението е изпратено успешно!</p>";
         } else {
-            // Ако mail() не успее да изпрати имейла
+            
             echo "<p style='color: red;'>Възникна проблем при изпращане на съобщението. Моля, опитайте отново по-късно.</p>";
         }
     }
