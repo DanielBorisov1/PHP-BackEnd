@@ -1,3 +1,7 @@
+<?php include 'process.php';?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +22,8 @@
 
 <body>
 
+
+
     <!--CONTACT-->
     <section id="contact" class="section-padding bg-white ">
         <div class="container">
@@ -28,46 +34,68 @@
                         <div class="line bg-white"></div>
                         <p class="text-white">We love to craft digital experiances for brands rather than crap and more
                             lorem ipsums and do crazy skills</p>
+
+
+
                     </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="row justify-content-center mb-4">
+                <div class="col-lg-4 col-12">
+
+                <?php echo $alert; ?>
+          
+
                 </div>
             </div>
+
+            
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <form action="#" class="row g-3 p-lg-5 p-4 bg-white theme-shadow"><!--p-lg-5 padding-large-->
+
+                    <form method="POST" class="row g-3 p-lg-5 p-4 bg-white theme-shadow"><!--p-lg-5 padding-large-->
+
+                
+                        <div class="col-lg-6 form-group">
+                            <input type="text" class="form-control" required placeholder="Enter first name" name="FirstName">
+                        </div>
 
                         <div class="col-lg-6 form-group">
-                            <input type="text" class="form-control" placeholder="Enter first name">
-                        </div>
-
-                        <div class="col-lg-6 form-group">
-                            <input type="text" class="form-control" placeholder="Enter last name">
+                            <input type="text" class="form-control" required placeholder="Enter last name" name="LastName">
                         </div>
 
                         <div class="col-lg-12 form-group">
-                            <input type="email" class="form-control" placeholder="Enter Email adress">
+                            <input type="email" class="form-control" required placeholder="Enter Email adress" name="Email">
                         </div>
 
                         <div class="col-lg-12 form-group">
-                            <input type="text" class="form-control" placeholder="Enter subject">
+                            <input type="text" class="form-control" required placeholder="Enter subject" name="Subject">
                         </div>
 
                         <div class="col-lg-12 form-group">
-                            <textarea name="message " rows="5" class="form-control"
+                            <textarea name="msg" required rows="5" class="form-control"
                                 placeholder="Enter massage"></textarea>
                         </div>
 
                         <div class="col-lg-12 form-group d-grid"> <!--d-grid прави го на пълен размер col-12-->
-                            <button class="btn btn-brand">Send Message</button>
+                            <button type="submit" name="btn-send" class="btn btn-brand">Send Message</button>
                         </div>
 
                     </form>
+
+
+
                 </div>
             </div>
 
         </div>
     </section>
 
-    
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

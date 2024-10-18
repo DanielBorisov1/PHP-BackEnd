@@ -143,3 +143,26 @@ img {
     box-shadow: none;
 }
 
+
+.alert-success {
+    z-index: 1 !important;
+    background: #D4edda !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    padding: 20px 40px !important;
+    width: 100% !important;
+    border-left: 8px solid #3ad66e !important;
+    border-radius: 4px !important;
+}
+
+.alert-error {
+    color: red !important;
+    z-index: 1 !important;
+    background: #fff3cd !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    padding: 20px 40px !important;
+    width: 100% !important;
+    border-left: 8px solid #ff5202 !important;
+    border-radius: 4px !important;
+}
