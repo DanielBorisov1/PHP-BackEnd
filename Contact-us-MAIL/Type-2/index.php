@@ -45,56 +45,50 @@
             </div>
 
             <div class="row justify-content-center mb-4">
-                <div class="col-lg-4 col-12">
-
+                <div class="col-lg-4 col-12 text-center">
                     <?php
-                    $Msg = "";
-                       if(isset($_GET['error'])){
+                    // Показване на съобщенията за грешки, ако има такива
+                    if (!empty($errors)) {
+                        foreach ($errors as $error) {
+                            echo "<p class='error-message' >$error</p>";
+                        }
+                    }
 
-                        $Msg = "Please Fill in the Blanks";
-                        echo '<div class="alert alert-danger">'.$Msg.'</div>';
-                       }
-
-                       if(isset($_GET['success'])){
-
-                        $Msg = "Your Message Has Been Sent";
-                        echo '<div class="alert alert-success">'.$Msg.'</div>';
-
-                       }
-
+                    // Показване на съобщение за успех
+                    if (isset($success_message)) {
+                        echo "<p class='success-message'>$success_message</p>";
+                    }
                     ?>
-
-
                 </div>
-                
+
             </div>
 
 
             <div class="row justify-content-center">
                 <div class="col-lg-8">
 
-                    <form action="process.php" method="POST" class="row g-3 p-lg-5 p-4 bg-white theme-shadow"><!--p-lg-5 padding-large-->
+                    <form method="POST" class="row g-3 p-lg-5 p-4 bg-white theme-shadow"><!--p-lg-5 padding-large-->
 
 
-                    <!--required-->
+                        <!--required-->
                         <div class="col-lg-6 form-group">
-                            <input type="text" class="form-control"  placeholder="Enter first name" name="FName">
+                            <input type="text" class="form-control" placeholder="Enter first name" name="FName">
                         </div>
 
                         <div class="col-lg-6 form-group">
-                            <input type="text" class="form-control"  placeholder="Enter last name" name="LName">
+                            <input type="text" class="form-control" placeholder="Enter last name" name="LName">
                         </div>
 
                         <div class="col-lg-12 form-group">
-                            <input type="email" class="form-control"  placeholder="Enter Email adress" name="Email">
+                            <input type="email" class="form-control" placeholder="Enter Email adress" name="Email">
                         </div>
 
                         <div class="col-lg-12 form-group">
-                            <input type="text" class="form-control"  placeholder="Enter subject" name="Subject">
+                            <input type="text" class="form-control" placeholder="Enter subject" name="Subject">
                         </div>
 
                         <div class="col-lg-12 form-group">
-                            <textarea name="msg"  rows="5" class="form-control"
+                            <textarea name="msg" rows="5" class="form-control"
                                 placeholder="Enter massage"></textarea>
                         </div>
 
