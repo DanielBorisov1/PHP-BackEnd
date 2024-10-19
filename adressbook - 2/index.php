@@ -54,7 +54,7 @@ $groups = array(1 => 'Храни', 2 => 'Транспорт', 3 => 'Забавл
         <?php
         //проверяваме дали даден файл съществува
         if (file_exists('data.txt')) {
-            //чете файла
+
             $result = file('data.txt');
             $totslSum = 0;
 
@@ -63,13 +63,12 @@ $groups = array(1 => 'Храни', 2 => 'Транспорт', 3 => 'Забавл
                 $columns = explode('!', $value);
 
 
-                if ((int)$_GET['group'] != (int) $columns[2]) {
+
+                /*    if ($_GET['group'] > 0 && (int)$_GET['group'] != (int) $columns[2]) {
                     continue;
-                }
+                }*/
 
 
-                //Разбиване на файловете по редовете на таблицата
-                //value държи цялата информация
                 //когато get параметъра не е равен на текущия ред пишем continue
 
 
