@@ -6,11 +6,7 @@ include '../adressbook/includes/header.php';
 error_reporting(E_ERROR | E_PARSE);
 
 
-//масив
-//Приятели; Бивши; Бъдещи; Колеги
 $groups = array(1 => 'Храни', 2 => 'Транспорт', 3 => 'Забавления', 4 => 'Други');
-
-
 
 ?>
 
@@ -22,13 +18,21 @@ $groups = array(1 => 'Храни', 2 => 'Транспорт', 3 => 'Забавл
 <form method="get">
 
     <div class="d-flex pt-4 justify-content-center text-center aling-items-center">
-        <select name="group "> <!--1-->
+        <select name="group"> <!--1-->
             <option value="0">Всички</option>
 
             <?php
             //Приятели; Бивши; Бъдещи; Колеги 
             foreach ($groups as $key => $value) {
-                echo '<option value=" ' . $key . ' ">'  . $value . '</option>';
+                echo '<option';
+                
+                if(isset($_GET['group']) && (int)$_GET['group'] == $key){
+                    echo ' selected ';
+                }
+                
+                
+               echo ' value=" ' . $key . ' ">'  . $value . 
+               '</option>';
             }
             ?>
 
@@ -36,9 +40,6 @@ $groups = array(1 => 'Храни', 2 => 'Транспорт', 3 => 'Забавл
         <input type="submit" value="Филтрирай" class="" />
     </div>
 </form>
-
-
-
 
 
 
@@ -60,16 +61,17 @@ $groups = array(1 => 'Храни', 2 => 'Транспорт', 3 => 'Забавл
 
             //всяка една информация ще бъде един нов ред на таблицата
             foreach ($result as $value) {
+
                 $columns = explode('!', $value);
 
-
-
-                /*    if ($_GET['group'] > 0 && (int)$_GET['group'] != (int) $columns[2]) {
+                    //isset е поставен там защото ако го няма и бъде въведена стойност кода ще изгърми благодарение на isset проверяваме дали има стойност
+                   if (isset($_GET['group']) && $_GET['group'] > 0 && (int)$_GET['group'] != (int) $columns[2]) {
                     continue;
-                }*/
+
+                }
 
 
-                //когато get параметъра не е равен на текущия ред пишем continue
+              
 
 
 
@@ -84,8 +86,6 @@ $groups = array(1 => 'Храни', 2 => 'Транспорт', 3 => 'Забавл
                 <td class="border">' . number_format($columns[1], 2, '.', '') . '</td>
                 <td class="border">' . $groups[trim($columns[2])] . '</td>
                 </tr>';        //.$groups [trim($columns[2])] показва ни се групата както е записана а не със стойности (1;2;3)
-
-
 
             }
 

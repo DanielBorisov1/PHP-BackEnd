@@ -13,14 +13,14 @@ $groups = array(1 => 'Храни', 2 => 'Транспорт', 3 => 'Забавл
 //trim маха всички излишни интервали отляво и отдясно
 if ($_POST) {
 
-    $username=trim($_POST['username']);
-    $username=str_replace('!','', $username);//премахва символа ! ако е поставен в usernama
-    
+    $username = trim($_POST['username']);
+    $username = str_replace('!', '', $username); //премахва символа ! ако е поставен в usernama
+
     //ако види някъде запетая да го направи в точка 
-    $sum= floatval(str_replace(',', '.',$_POST['sum']));
+    $sum = floatval(str_replace(',', '.', $_POST['sum']));
 
     $selectedGroup = (int)$_POST['group']; //1
-    $error=false;
+    $error = false;
 
     //Проверяваме текста който сме въвели дали е по-малко от 4 
     if (strlen($username) < 4) {
@@ -28,20 +28,25 @@ if ($_POST) {
         $error = true;
     }
 
+    if (!array_key_exists($selectedGroup, $groups)) {
+        echo 'Невалидна група';
+        $error = true;
+    }
 
-    if ($sum<0) {
+
+    if ($sum < 0) {
         echo  '<p>Невалиден разход</p>';
         $error = true;
     }
 
     //резултата който го изпраща към data.txt
-    if (!$error) {   
-        $result=$username.'!'.$sum.'!'.$selectedGroup. "\n";
-       
-       if ( file_put_contents('data.txt', $result,FILE_APPEND)){
+    if (!$error) {
+        $result = $username . '!' . $sum . '!' . $selectedGroup . "\n";
 
-        echo 'Записа е успешен';
-       }
+        if (file_put_contents('data.txt', $result, FILE_APPEND)) {
+
+            echo 'Записа е успешен';
+        }
     }
    
 }
