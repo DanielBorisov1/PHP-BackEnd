@@ -72,8 +72,8 @@ if (
 		//hashing the password
 		$pass = md5($pass);
 
-		$sql = "SELECT * FROM users1 WHERE user_name='$uname' ";
-		$sql2 = "SELECT * FROM users1 WHERE email='$email' ";
+		$sql = "SELECT * FROM users WHERE user_name='$uname' ";
+		$sql2 = "SELECT * FROM users WHERE email='$email' ";
 
 		$result = mysqli_query($conn, $sql);
 
@@ -95,7 +95,7 @@ if (
 		
 		
 		else {
-           $sql2 = "INSERT INTO users1(user_name, email, password, name) VALUES('$uname', '$email', '$pass', '$name')";
+           $sql2 = "INSERT INTO users(user_name, email, password, name) VALUES('$uname', '$email', '$pass', '$name')";
 		   $result2 = mysqli_query($conn, $sql2);
 
 		   if ($result2) {

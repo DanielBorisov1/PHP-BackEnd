@@ -32,6 +32,13 @@
 					<br>
 				</div>
 
+				<label>Email</label>
+				<div class="field">
+					<input class="ms-2" type="email" name="email" placeholder="Email Address" >
+					<i class="fa-solid fa-envelope"></i>
+					<br>
+				</div>
+
 				<label>Password</label>
 				<div class="field">
 					<input class="ms-2 " type="password" name="password" placeholder="Password">
