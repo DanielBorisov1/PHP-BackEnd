@@ -38,13 +38,28 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                <div class="topbar d-flex align-items-center">
                     <div class="container d-flex justify-content-center justify-content-md-between">
                          <div class="contact-info d-flex align-items-center">
+
+
+
                               <i class="bi bi-envelope d-flex align-items-center"><a
                                         href="mailto:contact@example.com">contact@example.com</a></i>
                               <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
 
                          </div>
-                         <div class="social-links d-none d-md-flex align-items-center">
-                              <a href="index.php" class="border-bottom p-1 "><i class="fa-regular fa-user pe-1"></i>Login</a>
+                         <div class="social-links d-none d-md-flex align-items-center justify-content-center text-center">
+                              <!--   <a href="index.php" class="border-bottom p-1 "><i class="fa-regular fa-user pe-1"></i>Login</a> -->
+
+                              <?php
+                              // Check if the user is logged in
+                              if (isset($_SESSION['user_name'])) {
+                                   echo '<p class=" text-white pt-2 text-center">Hello, ' . htmlspecialchars($_SESSION['user_name']) . '!</p>';
+                                   echo '<a href="logout.php"><i class="fa-solid fa-user me-1"></i>Logout</a>';
+                              } else {
+                                   echo '<a href="index.php">Login</a>';
+                              }
+                              ?>
+
+
                               <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
                               <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
                               <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
