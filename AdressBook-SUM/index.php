@@ -1,7 +1,7 @@
 <?php
 
 $pageTitle = "Списък";
-include '../adressbook/includes/header.php';
+include './includes/header.php';
 
 error_reporting(E_ERROR | E_PARSE);
 

@@ -2,17 +2,29 @@
 
 
 $pageTitle = "Форма";
-include '../adressbook/includes/header.php';
+include './includes/header.php';
 
 
-//масив
-//Приятели; Бивши; Бъдещи; Колеги
+
 $groups = array(1 => 'Храни', 2 => 'Транспорт', 3 => 'Забавления', 4 => 'Други');
 
 
-//trim маха всички излишни интервали отляво и отдясно
-if ($_POST) {
 
+if ($_POST) {
+    //echo '<pre>'. print_r ($_FILES, true). '<pre>';
+
+
+    //проверява дали има качени снимкови файлове
+    if (count($_FILES) > 0) {
+        if (move_uploaded_file($_FILES['picture']['tmp_name'], 'test' . DIRECTORY_SEPARATOR . $_FILES['picture']['name'])) {
+
+            echo 'Файла е качен успешно <br>';
+        } else {
+            echo 'Грешка';
+        }
+    }
+
+    //trim маха всички излишни интервали отляво и отдясно
     $username = trim($_POST['username']);
     $username = str_replace('!', '', $username); //премахва символа ! ако е поставен в usernama
 
@@ -48,7 +60,6 @@ if ($_POST) {
             echo 'Записа е успешен';
         }
     }
-   
 }
 
 //показва масива echo '<pre>'.print_r($_POST, true). '</pre>';
@@ -61,10 +72,11 @@ if ($_POST) {
     <a href="index.php">Списък</a>
 
     <!--POST!!! изпраща информацията от текстбоксовете-->
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
 
         <p>Име:<input type="text" class="ms-2 mt-2" name="username" /></p>
         <p>Сума:<input type="text" class="ms-2" name="sum" /></p>
+        <p>Снимка:<input type="file" class="ms-2 mt-2" name="picture" /></p>
 
         <select name="group"> <!--1-->
 
@@ -93,6 +105,6 @@ if ($_POST) {
 
 <!--Footer-->
 <?php
-include '../adressbook/includes/footer.php';
+include './includes/footer.php';
 
 ?>
