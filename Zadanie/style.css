@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: auto;
+    
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 8px 0 4px;
+}
+
+select,
+input[type="number"],
+input[type="text"],
+button {
+    width: 100%;
+    padding: 8px;
+    margin: 4px 0 12px;
+}
+
+.message {
+    font-weight: bold;
+    color: green;
+    text-align: center !important;
+}
+
+.error {
+    font-weight: bold;
+    color: red;
+}
