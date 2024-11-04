@@ -1,0 +1,15 @@
+
+
+.product-display{
+    margin: 2rem 0;
+}
+
+.product-display .product-display-table {
+    width: 100% !important;
+    text-align: center !important; 
+}
+
+.product-display .product-display-table thead {
+    font-size: 2rem !important;
+    
+}
